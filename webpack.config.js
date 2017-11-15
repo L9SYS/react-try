@@ -3,10 +3,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const DEBUG = process.env.NODE_ENV !== 'production';
+
 const paths = {
     DIST: path.resolve(__dirname, 'dist'),
     SRC: path.resolve(__dirname, 'src'),
-    JS: path.resolve(__dirname, 'src/js')
+    JS: path.resolve(__dirname, 'src/js'),
+    STYLE: path.resolve(__dirname, 'src/style')
 };
 
 module.exports = {
@@ -24,23 +27,37 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx)?$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
             },
             {
-                test: /\.css$/,
+                test: /\.(css|scss)?$/,
                 loader: ExtractTextPlugin.extract({
-                    use: 'css-loader'
+                    use: ['css-loader', 'sass-loader'],
+                    publicPath: paths.STYLE,
                 }),
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                use: ['file-loader']
+                test: /\.(png|jpg|gif)?$/,
+                use: 'file-loader'
             },
         ]
     },
+    devtool: DEBUG ? 'source-map' : '',
+    context: __dirname,
+    target: 'web',
     resolve: {
-        extensions: ['.js', '.jsx']
-    }
+        modules: [
+            'node_modules',
+            path.resolve(__dirname, 'app'),
+        ],
+        extensions: ['.js', '.json', '.jsx', '.css', '.scss']
+    },
+    cache: false,
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 1000,
+        poll: true,
+    },
 };

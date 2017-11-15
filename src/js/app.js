@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import '../css/style.css';
+import '../style/style.scss';
 
 import sameImg from '../assets/sameImg.jpg';
 
