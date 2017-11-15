@@ -4,7 +4,7 @@
   "description": "My React to React,Webpack,Babel",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/npm.git"
+    "url": "https://github.com/L9SYS/react-try.git"
   },
   "license": "(ISC OR GPL-3.0)",
   "scripts": {
