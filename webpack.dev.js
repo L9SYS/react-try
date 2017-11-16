@@ -3,8 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const DEBUG = process.env.NODE_ENV !== 'production';
-
 const paths = {
     DIST: path.resolve(__dirname, 'dist'),
     SRC: path.resolve(__dirname, 'src'),
@@ -44,7 +42,7 @@ module.exports = {
             },
         ]
     },
-    devtool: DEBUG ? 'source-map' : '',
+    devtool: 'source-map',
     context: __dirname,
     target: 'web',
     resolve: {

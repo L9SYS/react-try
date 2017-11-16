@@ -1,15 +1,15 @@
 {
-  "name": "myreact2react1",
+  "name": "myreact2react",
   "version": "0.0.1",
-  "description": "My React to React,Webpack,Babel",
+  "description": "My React to React,Webpack,Babel,SCSS,HTML5",
   "repository": {
     "type": "git",
     "url": "https://github.com/L9SYS/react-try.git"
   },
   "license": "(ISC OR GPL-3.0)",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

@@ -10,7 +10,6 @@ export default class Hello extends Component {
         return (
             <div>
             Hello from react
-
             <img src={ sameImg } alt='Danny Choo Hatsune Miku Dollfie' />
         </div>
     );
