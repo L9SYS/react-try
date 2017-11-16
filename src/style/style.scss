@@ -1,12 +1,12 @@
-html,body,* {
+html,body {
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
-    display:flex;
-    padding:0;
-    margin: 0;
-    border: 0px none transparent;
+    font-size:  12px;
+    display:    flex;
+    padding:    0;
+    margin:     0;
+    border:     0px none transparent;
     background: transparent;
-    background-color: transparent;
+    background-color:   transparent;
     & > img{
         border: 1px solid red;
     }
