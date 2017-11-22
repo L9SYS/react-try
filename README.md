@@ -1,1 +1,1 @@
-react+webpack.
+npm+node, babel+react+webpack.

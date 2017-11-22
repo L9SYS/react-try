@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/L9SYS/react-try.git"
   },
-  "license": "(ISC OR GPL-3.0)",
+  "license": "SEE LICENSE IN ./LICENSE",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
